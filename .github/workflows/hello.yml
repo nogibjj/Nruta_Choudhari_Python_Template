@@ -31,7 +31,8 @@ jobs:
             
 
       - name: Run Docker container
-        run: docker run -it --rm -v ${{ github.workspace }}:/workspace -p 8000:8000 python-dev
+        run: docker run --rm -v /home/runner/work/Nruta_Mini_Project_1/Nruta_Mini_Project_1:/workspace -p 8000:8000 python-dev
+      
 
       - name: Install packages
         run: make install

@@ -14,6 +14,6 @@ docker-build:
 	docker build -f .devcontainer/Dockerfile -t python-dev .
 
 docker-run:
-	docker run -it --rm -v "$(PWD)":/workspace -p 8000:8000 python-dev
+	docker run --rm -v "$(PWD)":/workspace -p 8000:8000 python-dev
 
 all: install format lint test
