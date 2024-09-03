@@ -2,3 +2,14 @@
 
 # Nruta_Mini_Project_1
 Week 1 mini project where we create a Python template
+
+This template includes:
+- .devcontainer
+
+- Makefile
+
+- GitHub Actions
+
+- Requirements.txt
+
+- README.md
