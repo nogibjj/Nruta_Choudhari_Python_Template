@@ -27,7 +27,8 @@ jobs:
             ${{ runner.os }}-buildx-
 
       - name: Build Docker image
-        run: docker build -t python-dev .
+        run: docker build -f .devcontainer/Dockerfile -t python-dev .
+            
 
       - name: Run Docker container
         run: docker run -it --rm -v ${{ github.workspace }}:/workspace -p 8000:8000 python-dev
