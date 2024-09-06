@@ -29,12 +29,9 @@ jobs:
       - name: Build Docker image
         run: docker build -f .devcontainer/Dockerfile -t python-dev .
             
-
       - name: Run Docker container
         run: docker run --rm -v /home/runner/work/Nruta_Mini_Project_1/Nruta_Mini_Project_1:/workspace -p 8000:8000 python-dev
       
-      
-
       - name: Install packages
         run: make install
       
@@ -46,3 +43,6 @@ jobs:
       
       - name: Run tests
         run: make test
+      
+      - name: List files for debugging
+        run: ls -R
