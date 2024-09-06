@@ -1,3 +1,4 @@
+#Starting the Dockerfile
 # Use the official Python base image
 FROM python:3.10-slim
 
