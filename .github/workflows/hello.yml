@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: List files for debugging
+        run: ls -R
       
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
@@ -27,7 +29,7 @@ jobs:
             ${{ runner.os }}-buildx-
 
       - name: Build Docker image
-        run: docker build -f .devcontainer/Dockerfile -t python-dev .
+        run: docker build -f $GITHUB_WORKSPACE/.devcontainer/Dockerfile -t python-dev .
             
       - name: Run Docker container
         run: docker run --rm -v /home/runner/work/Nruta_Mini_Project_1/Nruta_Mini_Project_1:/workspace -p 8000:8000 python-dev
@@ -43,6 +45,3 @@ jobs:
       
       - name: Run tests
         run: make test
-      
-      - name: List files for debugging
-        run: ls -R
